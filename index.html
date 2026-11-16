@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090c">
+  <title>CSS Loader Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>CSS Loader Animation</h1>
+    <section class="loader-board" aria-label="CSS loader animation examples">
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>GRADIENT TEXT</h2>
+          <div class="text-fill-loader">LOADING</div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>.text-fill-loader {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  background: linear-gradient(90deg,
+    #1abc9c, #3498db, #9b59b6);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: sweep 2s infinite linear;
+}
+
+@keyframes sweep {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>RADAR PULSE</h2>
+          <div class="pulse-loader"></div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>.pulse-loader {
+  border-radius: 50%;
+  animation: pulse 1.2s infinite
+    cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>MORPHING SHAPE</h2>
+          <div class="morph-loader"></div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>@keyframes morph {
+  0% {
+    border-radius: 0;
+    transform: rotate(0deg);
+    background-color: #1abc9c;
+  }
+  50% {
+    border-radius: 50%;
+    transform: rotate(180deg) scale(1.2);
+    background-color: #9b59b6;
+  }
+  100% {
+    border-radius: 0;
+    transform: rotate(360deg);
+    background-color: #1abc9c;
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>DUAL ORBIT</h2>
+          <div class="dual-orbit-loader"></div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>.dual-orbit-loader::before {
+  inset: 0;
+  border-top-color: #1e90ff;
+  border-bottom-color: #1e90ff;
+  animation: spin-forward 1.5s
+    linear infinite;
+}
+.dual-orbit-loader::after {
+  inset: 10px;
+  border-left-color: #ff7f50;
+  border-right-color: #ff7f50;
+  animation: spin-backward 1s
+    linear infinite;
+}
+
+@keyframes spin-forward {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-backward {
+  to { transform: rotate(-360deg); }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>BOUNCING SHADOWS</h2>
+          <div class="shadow-loader">
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+          </div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>.shadow-loader .circle {
+  animation: jump 0.5s alternate
+    infinite;
+}
+.shadow-loader .circle:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.shadow-loader .circle:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 20px 5px
+      rgba(0, 0, 0, .25);
+  }
+  100% {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 10px
+      rgba(0, 0, 0, .08);
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="loader-card">
+        <div class="preview">
+          <h2>PROGRESS BAR</h2>
+          <div class="progress-track">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="code-panel">
+          <button class="copy" type="button">Copy CSS</button>
+          <pre><code>.progress-bar {
+  height: 100%;
+  background-color: #0984e3;
+  position: absolute;
+  left: -50%;
+  width: 50%;
+  border-radius: 3px;
+  animation: slide 1.5s infinite ease;
+}
+
+@keyframes slide {
+  0% { left: -50%; width: 30%; }
+  50% { width: 80%; }
+  100% { left: 100%; width: 30%; }
+}</code></pre>
+        </div>
+      </article>
+
+    </section>
+    <p class="footer-note">Six CSS-only loaders · Scroll to explore · Copy each animation's CSS</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
